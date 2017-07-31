@@ -5,8 +5,7 @@ namespace Webthink\GuzzleJwt;
 interface StorageInterface
 {
     /**
-     * This function will store a token inside the storage.
-     * Before storing it will also check if the token is valid.
+     * This function will store a token.
      *
      * @param TokenInterface $token
      * @return void
@@ -14,7 +13,9 @@ interface StorageInterface
     public function storeToken(TokenInterface $token);
 
     /**
-     * @return TokenInterface
+     * Returns either the token or null if the token could not be retrieved from the storage.
+     *
+     * @return TokenInterface|null
      */
     public function getToken();
 }
