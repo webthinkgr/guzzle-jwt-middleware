@@ -2,6 +2,13 @@
 
 Goal of this package is to provide a set of useful classes in order to use a JWT authentication with Guzzle.
 
+**NOTE:** that this repository is still **WIP**
+
+## Description
+
+I will not proceed with creating classes that extend the `AuthenticatorInterface`. The AuthenticatorInterface
+can be implemented by the developer who uses the package.
+
 ## Contributing
 
 This repo is still WIP but feel free to comment on anything you might believe it's going wrong or even better contribute.
