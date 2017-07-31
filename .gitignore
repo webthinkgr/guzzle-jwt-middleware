@@ -1,0 +1,72 @@
+### Windows
+
+## Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+## Folder config file
+Desktop.ini
+
+## Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+### Linux
+*~
+
+## KDE directory preferences
+.directory
+
+## Linux trash folder which might appear on any partition or disk
+.Trash-*
+
+## Apple
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+
+### Composer
+composer.phar
+composer.lock
+vendor/
+
+### phing files
+build.properties.local
+
+### IDE Project files
+
+## IntelliJ project files
+.idea
+*.iml
+out
+gen
+
+## eclipse IDE
+.buildpath
+.project
+.settings*
+
+## NetBeans
+nbproject/*
+nbproject/private/
+nbbuild/
+nbdist/
+nbactions.xml
+nb-configuration.xml
+.nb-gradle/
+
+### Documentation
+apigen.phar
+docs
+
+### phpunit
+build
+phpunit.xml
+
+### Custom
+.htaccess
+tags
+/.ssh
+/cgi-bin
