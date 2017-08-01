@@ -32,10 +32,7 @@ class ChainStorage implements StorageInterface
     }
 
     /**
-     * This function will store a token.
-     *
-     * @param \Webthink\GuzzleJwt\TokenInterface $token
-     * @return void
+     * @inheritdoc
      */
     public function storeToken(TokenInterface $token)
     {
@@ -45,9 +42,7 @@ class ChainStorage implements StorageInterface
     }
 
     /**
-     * Returns either the token or null if the token could not be retrieved from the storage.
-     *
-     * @return \Webthink\GuzzleJwt\TokenInterface|null
+     * @inheritdoc
      */
     public function getToken()
     {
