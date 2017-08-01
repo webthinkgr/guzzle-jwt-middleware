@@ -11,7 +11,7 @@ before_script:
     - composer install --prefer-dist --no-interaction
 
 script:
-    - vendor/bin/phpunit --coverage-clover=clover.xml
+    - php vendor/bin/phpunit tests/Unit
 #    - vendor/bin/phpcs ./src --standard=PSR2 -n
 
 after_success:

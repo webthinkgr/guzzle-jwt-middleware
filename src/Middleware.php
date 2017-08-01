@@ -2,7 +2,9 @@
 
 namespace Webthink\GuzzleJwt;
 
+use GuzzleHttp\Promise\RejectedPromise;
 use Psr\Http\Message\RequestInterface;
+use Webthink\GuzzleJwt\Exception\BadCredentialException;
 
 /**
  * @author George Mponos <gmponos@gmail.com>
@@ -14,15 +16,9 @@ class Middleware
      */
     private $authenticator;
 
-    /**
-     * @var StorageInterface
-     */
-    private $storage;
-
-    public function __construct(AuthenticatorInterface $authenticator, StorageInterface $storage)
+    public function __construct(AuthenticatorInterface $authenticator)
     {
         $this->authenticator = $authenticator;
-        $this->storage = $storage;
     }
 
     /**
@@ -37,15 +33,15 @@ class Middleware
             }
 
             if (!isset($options['jwt']['username']) || !isset($options['jwt']['password'])) {
-                return $handler($request, $options);
+                return new RejectedPromise(
+                    new BadCredentialException(
+                        'Auth credentials are not set correctly. Both username and password must be set',
+                        $request
+                    )
+                );
             }
 
-            $token = $this->storage->getToken();
-
-            if ($token === null || !$token->isValid()) {
-                $token = $this->authenticator->authenticate($options['jwt']['username'], $options['jwt']['password']);
-                $this->storage->storeToken($token);
-            }
+            $token = $this->authenticator->authenticate($options['jwt']['username'], $options['jwt']['password']);
 
             $request = $request->withHeader('Authorization', 'Bearer ' . $token->getTokenString());
             return $handler($request, $options);

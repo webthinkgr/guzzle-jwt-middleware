@@ -2,6 +2,7 @@
 
 namespace Webthink\GuzzleJwt\Token;
 
+use Webthink\GuzzleJwt\Encoder\Base64Encoder;
 use Webthink\GuzzleJwt\Encoder\EncoderInterface;
 use Webthink\GuzzleJwt\TokenInterface;
 
@@ -32,7 +33,7 @@ abstract class AbstractToken implements TokenInterface
      */
     protected $encoder;
 
-    public function __construct($token, EncoderInterface $encoder)
+    public function __construct($token, EncoderInterface $encoder = null)
     {
         list($header, $payload, $signature) = $this->parse($token);
 
@@ -40,7 +41,7 @@ abstract class AbstractToken implements TokenInterface
         $this->header = $header;
         $this->payload = $payload;
         $this->signature = $signature;
-        $this->encoder = $encoder;
+        $this->encoder = $encoder === null ? new Base64Encoder() : $encoder;
     }
 
     /**
