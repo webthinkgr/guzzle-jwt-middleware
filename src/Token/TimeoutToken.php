@@ -11,7 +11,7 @@ class TimeoutToken extends AbstractToken
      */
     private $offset;
 
-    public function __construct($token, EncoderInterface $encoder, $offset = 0)
+    public function __construct($token, EncoderInterface $encoder = null, $offset = 0)
     {
         parent::__construct($token, $encoder);
         $this->offset = $offset;

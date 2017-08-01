@@ -12,6 +12,11 @@ class ChainStorage implements StorageInterface
      */
     private $storages;
 
+    /**
+     * ChainStorage constructor.
+     *
+     * @param StorageInterface[] $storages
+     */
     public function __construct(array $storages)
     {
         foreach ($storages as $storage) {

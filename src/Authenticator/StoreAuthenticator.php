@@ -4,8 +4,12 @@ namespace Webthink\GuzzleJwt\Authenticator;
 
 use Webthink\GuzzleJwt\AuthenticatorInterface;
 use Webthink\GuzzleJwt\StorageInterface;
-use Webthink\GuzzleJwt\TokenInterface;
 
+/**
+ * Class StoreAuthenticator
+ *
+ * @package Webthink\GuzzleJwt\Authenticator
+ */
 class StoreAuthenticator implements AuthenticatorInterface
 {
     /**
@@ -18,6 +22,12 @@ class StoreAuthenticator implements AuthenticatorInterface
      */
     private $authenticator;
 
+    /**
+     * StoreAuthenticator constructor.
+     *
+     * @param \Webthink\GuzzleJwt\AuthenticatorInterface $authenticator
+     * @param \Webthink\GuzzleJwt\StorageInterface $storage
+     */
     public function __construct(AuthenticatorInterface $authenticator, StorageInterface $storage)
     {
         $this->storage = $storage;
@@ -25,14 +35,12 @@ class StoreAuthenticator implements AuthenticatorInterface
     }
 
     /**
-     * @param string $username
-     * @param string $password
-     * @return \Webthink\GuzzleJwt\TokenInterface|null
+     * @inheritdoc
      */
     public function authenticate($username, $password)
     {
         $token = $this->storage->getToken();
-        if ($token !== null && $token instanceof TokenInterface) {
+        if ($token !== null && $token->isValid() !== false) {
             return $token;
         }
 

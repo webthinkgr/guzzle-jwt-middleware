@@ -3,18 +3,20 @@
 namespace Webthink\GuzzleJwt\Test\TestApp;
 
 use Webthink\GuzzleJwt\AuthenticatorInterface;
-use Webthink\GuzzleJwt\Token\Token;
-use Webthink\GuzzleJwt\TokenInterface;
+use Webthink\GuzzleJwt\Token\DummyToken;
 
 class TestAuthenticator implements AuthenticatorInterface
 {
     /**
-     * @param string $username
-     * @param string $password
-     * @return TokenInterface
+     * @inheritdoc
      */
     public function authenticate($username, $password)
     {
-        return new Token('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ');
+        return new DummyToken(
+            'my_token',
+            ['alg' => 'HS256'],
+            ['admin' => true],
+            'TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ'
+        );
     }
 }

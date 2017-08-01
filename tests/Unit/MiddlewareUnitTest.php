@@ -43,4 +43,23 @@ class MiddlewareUnitTest extends \PHPUnit_Framework_TestCase
         ]);
         $promise->wait();
     }
+
+    public function testMiddlewareWithCorrectOptions()
+    {
+        $authenticator = new TestAuthenticator();
+        $handler = new MockHandler([
+            new Response(200, [], 'test'),
+        ]);
+        $middleware = new Middleware($authenticator);
+        $function = $middleware($handler);
+
+        $promise = $function(new Request('get', '/'), [
+            'jwt' => [
+                'username' => 'user',
+                'password' => 'pass',
+            ],
+        ]);
+
+        $promise->wait();
+    }
 }

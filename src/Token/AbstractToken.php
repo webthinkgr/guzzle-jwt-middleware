@@ -35,13 +35,13 @@ abstract class AbstractToken implements TokenInterface
 
     public function __construct($token, EncoderInterface $encoder = null)
     {
+        $this->encoder = ($encoder === null ? new Base64Encoder() : $encoder);
         list($header, $payload, $signature) = $this->parse($token);
 
         $this->token = $token;
         $this->header = $header;
         $this->payload = $payload;
         $this->signature = $signature;
-        $this->encoder = $encoder === null ? new Base64Encoder() : $encoder;
     }
 
     /**
