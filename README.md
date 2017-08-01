@@ -1,5 +1,8 @@
 # Webthink - GuzzleJWT
 
+[![codecov](https://codecov.io/gh/gmponos/guzzleJwt/branch/master/graph/badge.svg)](https://codecov.io/gh/gmponos/guzzleJwt)
+[![Build Status](https://travis-ci.org/gmponos/guzzleJwt.svg?branch=master)](https://travis-ci.org/gmponos/guzzleJwt)
+
 Goal of this package is to provide a set of useful classes in order to use a JWT authentication with Guzzle.
 
 **NOTE:** that this repository is still **WIP**
