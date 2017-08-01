@@ -7,6 +7,9 @@ use Webthink\GuzzleJwt\StorageInterface;
 use Webthink\GuzzleJwt\Token\TokenFactory\TokenFactoryInterface;
 use Webthink\GuzzleJwt\TokenInterface;
 
+/**
+ * @author George Mponos <gmponos@gmail.com>
+ */
 class SymfonySessionStorage implements StorageInterface
 {
     /**
@@ -15,7 +18,7 @@ class SymfonySessionStorage implements StorageInterface
     private $session;
 
     /**
-     * @var
+     * @var string
      */
     private $key;
 
