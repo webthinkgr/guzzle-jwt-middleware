@@ -43,6 +43,10 @@ $stack->append(new Middleware($myAuthenticator));
 
 $httpClient = new Client([
     'handler' => $stack,
+    'jwt' => [
+        'username' => 'username',
+        'password' => 'password',
+    ],
 ]);
 
 $response = $httClient->get('/my_api_that_requires_jwt_token');
@@ -65,7 +69,7 @@ Then you can pass the store authenticator in the middleware and follow the proce
 
 ## Contributing
 
-This repo is still WIP but feel free to comment on anything you might believe it's going wrong or even better contribute.
+Feel free to comment on anything you might believe it's going in the wrong direction or even better contribute with a PR.
 
 ## Todo
 
@@ -74,7 +78,7 @@ This repo is still WIP but feel free to comment on anything you might believe it
 
 ## Credits
 
-- [George Mponos][https://github.com/gmponos]
+- [George Mponos](https://github.com/gmponos)
 
 ## License
 
