@@ -33,7 +33,7 @@ class Middleware
     public function __invoke(callable $handler)
     {
         return function (RequestInterface $request, array $options) use ($handler) {
-            if (!isset($options['jwt'])) {
+            if (!isset($options['jwt']) || $options['jwt'] === false) {
                 return $handler($request, $options);
             }
 

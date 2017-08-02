@@ -7,6 +7,9 @@ namespace Webthink\GuzzleJwt\Token;
  */
 class Token extends AbstractToken
 {
+    /**
+     * @inheritdoc
+     */
     public function isValid()
     {
         return true;

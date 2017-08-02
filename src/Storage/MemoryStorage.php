@@ -5,6 +5,9 @@ namespace Webthink\GuzzleJwt\Storage;
 use Webthink\GuzzleJwt\StorageInterface;
 use Webthink\GuzzleJwt\TokenInterface;
 
+/**
+ * @author George Mponos <gmponos@xm.com>
+ */
 class MemoryStorage implements StorageInterface
 {
     /**

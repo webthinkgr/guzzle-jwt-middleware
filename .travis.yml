@@ -12,7 +12,7 @@ before_script:
 
 script:
     - php vendor/bin/phpunit tests/Unit
-#    - vendor/bin/phpcs ./src --standard=PSR2 -n
+    - php vendor/bin/phpcs ./src
 
 after_success:
     - bash <(curl -s https://codecov.io/bash)

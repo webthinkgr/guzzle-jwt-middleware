@@ -2,6 +2,11 @@
 
 namespace Webthink\GuzzleJwt;
 
+/**
+ * Class TokenInterface
+ *
+ * @author George Mponos <gmponos@gmail.com>
+ */
 interface TokenInterface
 {
     /**
@@ -11,8 +16,14 @@ interface TokenInterface
      */
     public function getTokenString();
 
+    /**
+     * @return array
+     */
     public function getPayload();
 
+    /**
+     * @return array
+     */
     public function getHeader();
 
     /**

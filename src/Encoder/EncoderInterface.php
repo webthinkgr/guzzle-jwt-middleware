@@ -14,7 +14,7 @@ interface EncoderInterface
     public function encode($data);
 
     /**
-     * @param $data
+     * @param string $data
      * @return string
      */
     public function decode($data);

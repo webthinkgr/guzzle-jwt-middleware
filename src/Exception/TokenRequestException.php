@@ -7,6 +7,11 @@ use GuzzleHttp\Exception\BadResponseException;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
+/**
+ * Class TokenRequestException
+ *
+ * @author George Mponos <gmponos@gmail.com>
+ */
 class TokenRequestException extends BadResponseException
 {
     /**

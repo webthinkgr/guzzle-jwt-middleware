@@ -6,6 +6,9 @@ use Webthink\GuzzleJwt\Encoder\Base64Encoder;
 use Webthink\GuzzleJwt\Encoder\EncoderInterface;
 use Webthink\GuzzleJwt\TokenInterface;
 
+/**
+ * @author George Mponos <gmponos@xm.com>
+ */
 abstract class AbstractToken implements TokenInterface
 {
     /**
@@ -33,6 +36,12 @@ abstract class AbstractToken implements TokenInterface
      */
     protected $encoder;
 
+    /**
+     * AbstractToken constructor.
+     *
+     * @param string $token
+     * @param \Webthink\GuzzleJwt\Encoder\EncoderInterface|null $encoder
+     */
     public function __construct($token, EncoderInterface $encoder = null)
     {
         $this->encoder = ($encoder === null ? new Base64Encoder() : $encoder);
