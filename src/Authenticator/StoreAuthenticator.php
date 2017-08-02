@@ -30,6 +30,9 @@ class StoreAuthenticator implements AuthenticatorInterface
      */
     public function __construct(AuthenticatorInterface $authenticator, StorageInterface $storage)
     {
+        if ($authenticator instanceof StoreAuthenticator) {
+            throw new \InvalidArgumentException('You can not pass a StoreAuthenticator into another');
+        }
         $this->storage = $storage;
         $this->authenticator = $authenticator;
     }
