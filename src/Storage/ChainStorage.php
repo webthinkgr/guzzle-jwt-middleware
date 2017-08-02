@@ -26,6 +26,10 @@ class ChainStorage implements StorageInterface
             if (!$storage instanceof StorageInterface) {
                 throw new \InvalidArgumentException('Expected StorageInterface class');
             }
+
+            if ($storage instanceof ChainStorage) {
+                throw new \InvalidArgumentException('You can not pass a ChainStorage inside another');
+            }
         }
 
         $this->storages = $storages;
