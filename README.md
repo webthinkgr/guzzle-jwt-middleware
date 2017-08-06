@@ -2,6 +2,7 @@
 
 [![codecov](https://codecov.io/gh/gmponos/guzzleJwt/branch/master/graph/badge.svg)](https://codecov.io/gh/gmponos/guzzleJwt)
 [![Build Status](https://travis-ci.org/gmponos/guzzleJwt.svg?branch=master)](https://travis-ci.org/gmponos/guzzleJwt)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/977b400a-bae5-4d8a-8db0-2185f0e48318/big.png)](https://insight.sensiolabs.com/projects/977b400a-bae5-4d8a-8db0-2185f0e48318)
 
 Goal of this package is to provide a set of useful classes in order to use a JWT authentication with Guzzle.
 
