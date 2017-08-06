@@ -50,7 +50,7 @@ class DummyToken implements TokenInterface
      */
     public function getTokenString()
     {
-        $this->token;
+        return $this->token;
     }
 
     /**

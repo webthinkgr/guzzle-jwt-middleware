@@ -3,6 +3,7 @@
 namespace Webthink\GuzzleJwt\Test\Unit;
 
 use Webthink\GuzzleJwt\Storage\ChainStorage;
+use Webthink\GuzzleJwt\Storage\NullStorage;
 use Webthink\GuzzleJwt\StorageInterface;
 use Webthink\GuzzleJwt\Token\DummyToken;
 
@@ -10,8 +11,14 @@ class ChainStorageUnitTest extends \PHPUnit_Framework_TestCase
 {
     public function testThatChainStorageStoresInBothStorages()
     {
-        $storage1 = $this->getMockBuilder(StorageInterface::class)->getMock();
-        $storage2 = $this->getMockBuilder(StorageInterface::class)->getMock();
+        $storage1 = $this->getMockBuilder(StorageInterface::class)
+            ->disableOriginalConstructor()
+            ->getMock();
+
+        $storage2 = $this->getMockBuilder(StorageInterface::class)
+            ->disableOriginalConstructor()
+            ->getMock();
+
         $chainStorage = new ChainStorage([
             $storage1,
             $storage2,
@@ -39,5 +46,33 @@ class ChainStorageUnitTest extends \PHPUnit_Framework_TestCase
         $storage2->expects($this->exactly(0))->method('getToken');
 
         $chainStorage->getToken();
+    }
+
+    public function testInitializingAStorageWithAStorageTokenIsNotAccepted()
+    {
+        $storage1 = $this->getMockBuilder(ChainStorage::class)
+            ->disableOriginalConstructor()
+            ->getMock();
+        $this->setExpectedException(\InvalidArgumentException::class);
+        new ChainStorage([
+            $storage1,
+        ]);
+    }
+
+    public function testThatNoStorageHadTokenWillReturnNull()
+    {
+        $storage = new ChainStorage([
+            new NullStorage(),
+        ]);
+        $this->assertNull($storage->getToken());
+    }
+
+    public function testWithANonStorageClass()
+    {
+        $storage1 = $this->getMockBuilder(\stdClass::class)->getMock();
+        $this->setExpectedException(\InvalidArgumentException::class);
+        new ChainStorage([
+            $storage1,
+        ]);
     }
 }
