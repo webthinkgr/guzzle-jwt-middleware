@@ -38,11 +38,11 @@ class TimeoutToken extends AbstractToken
             $now = new \DateTime('now');
 
             if (is_int($payload['exp'])) {
-                return ($now->getTimestamp() - $payload['exp']) > 0;
+                return ($now->getTimestamp() - $payload['exp'] - $this->offset) > 0;
             }
 
             if (is_numeric($payload['exp'])) {
-                return ($now->format('U') - $payload['exp']) > 0;
+                return ($now->format('U') - $payload['exp'] - $this->offset) > 0;
             }
         }
 
