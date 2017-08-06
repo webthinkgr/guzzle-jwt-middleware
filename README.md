@@ -1,8 +1,8 @@
 # A guzzle middleware for JWT authentication.
 
-[![codecov](https://codecov.io/gh/gmponos/guzzleJwt/branch/master/graph/badge.svg)](https://codecov.io/gh/gmponos/guzzleJwt)
-[![Build Status](https://travis-ci.org/gmponos/guzzleJwt.svg?branch=master)](https://travis-ci.org/gmponos/guzzleJwt)
-[![SensioLabsInsight](https://insight.sensiolabs.com/projects/977b400a-bae5-4d8a-8db0-2185f0e48318/big.png)](https://insight.sensiolabs.com/projects/977b400a-bae5-4d8a-8db0-2185f0e48318)
+[![codecov](https://codecov.io/gh/webthinkgr/guzzle-jwt/branch/master/graph/badge.svg)](https://codecov.io/gh/webthinkgr/guzzle-jwt)
+[![Build Status](https://travis-ci.org/webthinkgr/guzzle-jwt.svg?branch=master)](https://travis-ci.org/webthinkgr/guzzle-jwt)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/a8aeeada-e24d-4474-b7a4-714fbd7d9432/mini.png)](https://insight.sensiolabs.com/projects/a8aeeada-e24d-4474-b7a4-714fbd7d9432)
 
 Goal of this package is to provide a set of useful classes in order to use a JWT authentication with Guzzle.
 
