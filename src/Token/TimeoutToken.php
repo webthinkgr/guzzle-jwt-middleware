@@ -20,6 +20,7 @@ class TimeoutToken extends AbstractToken
      * @param string $token
      * @param \Webthink\GuzzleJwt\Encoder\EncoderInterface|null $encoder
      * @param int $offset
+     * @throws \InvalidArgumentException
      */
     public function __construct($token, EncoderInterface $encoder = null, $offset = 0)
     {

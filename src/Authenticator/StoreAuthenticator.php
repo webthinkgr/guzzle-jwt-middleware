@@ -27,6 +27,7 @@ class StoreAuthenticator implements AuthenticatorInterface
      *
      * @param \Webthink\GuzzleJwt\AuthenticatorInterface $authenticator
      * @param \Webthink\GuzzleJwt\StorageInterface $storage
+     * @throws \InvalidArgumentException
      */
     public function __construct(AuthenticatorInterface $authenticator, StorageInterface $storage)
     {
