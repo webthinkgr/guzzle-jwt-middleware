@@ -19,16 +19,21 @@ class ChainStorage implements StorageInterface
      * ChainStorage constructor.
      *
      * @param StorageInterface[] $storages
+     * @throws \InvalidArgumentException
      */
     public function __construct(array $storages)
     {
+        if (empty($storages)) {
+            throw new \InvalidArgumentException('Storages can not be an empty array.');
+        }
+
         foreach ($storages as $storage) {
             if (!$storage instanceof StorageInterface) {
-                throw new \InvalidArgumentException('Expected StorageInterface class');
+                throw new \InvalidArgumentException('Expected StorageInterface class.');
             }
 
             if ($storage instanceof ChainStorage) {
-                throw new \InvalidArgumentException('You can not pass a ChainStorage inside another');
+                throw new \InvalidArgumentException('You can not pass a ChainStorage inside another.');
             }
         }
 

@@ -41,6 +41,7 @@ abstract class AbstractToken implements TokenInterface
      *
      * @param string $token
      * @param \Webthink\GuzzleJwt\Encoder\EncoderInterface|null $encoder
+     * @throws \InvalidArgumentException
      */
     public function __construct($token, EncoderInterface $encoder = null)
     {
