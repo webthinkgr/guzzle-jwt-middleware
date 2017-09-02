@@ -2,6 +2,7 @@
 
 namespace Webthink\GuzzleJwt\Token\TokenFactory;
 
+use Webthink\GuzzleJwt\Encoder\Base64Encoder;
 use Webthink\GuzzleJwt\Encoder\EncoderInterface;
 use Webthink\GuzzleJwt\Token\Token;
 
@@ -20,9 +21,9 @@ class TokenFactory implements TokenFactoryInterface
      *
      * @param \Webthink\GuzzleJwt\Encoder\EncoderInterface $encoder
      */
-    public function __construct(EncoderInterface $encoder)
+    public function __construct(EncoderInterface $encoder = null)
     {
-        $this->encoder = $encoder;
+        $this->encoder = $encoder === null ? new Base64Encoder() : $encoder;
     }
 
     /**

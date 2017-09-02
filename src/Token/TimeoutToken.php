@@ -19,7 +19,8 @@ class TimeoutToken extends AbstractToken
      *
      * @param string $token
      * @param \Webthink\GuzzleJwt\Encoder\EncoderInterface|null $encoder
-     * @param int $offset
+     * @param int $offset An offset can be set that it will reduce the expiration time. This is useful in cases you run
+     *                    a long running script
      * @throws \InvalidArgumentException
      */
     public function __construct($token, EncoderInterface $encoder = null, $offset = 0)
