@@ -48,7 +48,7 @@ class StoreAuthenticatorUnitTest extends \PHPUnit_Framework_TestCase
         /** @var AuthenticatorInterface|MockObject $testAuthenticator */
         $testAuthenticator = $this->getMockBuilder(AuthenticatorInterface::class)->getMock();
         $storeAuthenticator1 = new StoreAuthenticator($testAuthenticator, new NullStorage());
-        
+
         $this->setExpectedException(\InvalidArgumentException::class);
         $storeAuthenticator2 = new StoreAuthenticator($storeAuthenticator1, new NullStorage());
     }
