@@ -75,4 +75,10 @@ class ChainStorageUnitTest extends \PHPUnit_Framework_TestCase
             $storage1,
         ]);
     }
+
+    public function testThatYouCanNotInitializeAChainStorageWithEmptyArray()
+    {
+        $this->setExpectedException(\InvalidArgumentException::class);
+        new ChainStorage([]);
+    }
 }
