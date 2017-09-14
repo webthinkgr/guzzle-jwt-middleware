@@ -1,6 +1,6 @@
 {
     "name": "webthink/guzzle-jwt",
-    "homepage": "https://github.com/gmponos/guzzleJwt",
+    "homepage": "https://github.com/webthinkgr/guzzleJwt",
     "description": "This package contains useful classes and interfaces for requiring a JWT token",
     "keywords": [
         "webthink",

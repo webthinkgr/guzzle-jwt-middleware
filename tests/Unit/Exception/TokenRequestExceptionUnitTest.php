@@ -6,19 +6,19 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use Webthink\GuzzleJwt\Exception\TokenRequestException;
+use Webthink\GuzzleJwt\Exception\BadTokenRequestException;
 
 class TokenRequestExceptionUnitTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var TokenRequestException
+     * @var BadTokenRequestException
      */
     private $exception;
 
     public function setUp()
     {
         parent::setUp();
-        $this->exception = new TokenRequestException(
+        $this->exception = new BadTokenRequestException(
             'message',
             new Request('get', 'www.test.com'),
             new Response(),

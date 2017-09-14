@@ -3,7 +3,7 @@
 namespace Webthink\GuzzleJwt\Exception;
 
 use Exception;
-use GuzzleHttp\Exception\BadResponseException;
+use GuzzleHttp\Exception\RequestException;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
@@ -12,7 +12,7 @@ use Psr\Http\Message\ResponseInterface;
  *
  * @author George Mponos <gmponos@gmail.com>
  */
-class TokenRequestException extends BadResponseException
+class BadTokenRequestException extends RequestException
 {
     /**
      * TokenRequestException constructor.
