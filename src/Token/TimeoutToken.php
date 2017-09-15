@@ -34,16 +34,15 @@ class TimeoutToken extends AbstractToken
     public function isValid()
     {
         $payload = $this->getPayload();
-
         if (isset($payload['exp'])) {
             $now = new \DateTime('now');
 
             if (is_int($payload['exp'])) {
-                return ($now->getTimestamp() - $payload['exp'] - $this->offset) > 0;
+                return ($payload['exp'] - $this->offset - $now->getTimestamp()) > 0;
             }
 
             if (is_numeric($payload['exp'])) {
-                return ($now->format('U') - $payload['exp'] - $this->offset) > 0;
+                return ($payload['exp'] - $this->offset - $now->format('U')) > 0;
             }
         }
 
