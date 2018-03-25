@@ -3,7 +3,7 @@
 namespace Webthink\GuzzleJwt\Encoder;
 
 /**
- * Interface EncoderInterface
+ * @author George Mponos <gmponos@gmail.com>
  */
 interface EncoderInterface
 {

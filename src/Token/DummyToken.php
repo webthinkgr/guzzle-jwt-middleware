@@ -5,6 +5,9 @@ namespace Webthink\GuzzleJwt\Token;
 use Webthink\GuzzleJwt\TokenInterface;
 
 /**
+ * This is a token that you will retrieve from it what you passed on it's construction.
+ * Mainly the use of this token class is for testing purposes.
+ *
  * @author George Mponos <gmponos@xm.com>
  */
 class DummyToken implements TokenInterface

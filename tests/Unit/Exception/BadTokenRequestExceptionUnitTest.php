@@ -8,7 +8,7 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Webthink\GuzzleJwt\Exception\BadTokenRequestException;
 
-class TokenRequestExceptionUnitTest extends \PHPUnit_Framework_TestCase
+class BadTokenRequestExceptionUnitTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @var BadTokenRequestException

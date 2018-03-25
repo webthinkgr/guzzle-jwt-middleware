@@ -16,7 +16,7 @@ class MemoryStorage implements StorageInterface
     private $store = null;
 
     /**
-     * @return null
+     * @return TokenInterface|null
      */
     public function getToken()
     {

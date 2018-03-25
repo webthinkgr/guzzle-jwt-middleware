@@ -25,8 +25,6 @@ class DummyTokenFactory implements TokenFactoryInterface
     private $signature;
 
     /**
-     * DummyTokenFactory constructor.
-     *
      * @param array $payload
      * @param array $header
      * @param string $signature

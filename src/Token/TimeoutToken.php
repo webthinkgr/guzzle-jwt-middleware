@@ -5,6 +5,8 @@ namespace Webthink\GuzzleJwt\Token;
 use Webthink\GuzzleJwt\Encoder\EncoderInterface;
 
 /**
+ * Timeout token describes a token that includes in it's payload an expiration.
+ *
  * @author George Mponos <gmponos@xm.com>
  */
 class TimeoutToken extends AbstractToken
@@ -15,8 +17,6 @@ class TimeoutToken extends AbstractToken
     private $offset;
 
     /**
-     * TimeoutToken constructor.
-     *
      * @param string $token
      * @param \Webthink\GuzzleJwt\Encoder\EncoderInterface|null $encoder
      * @param int $offset

@@ -21,8 +21,6 @@ class TimeoutTokenFactory implements TokenFactoryInterface
     private $offset;
 
     /**
-     * TimeoutTokenFactory constructor.
-     *
      * @param \Webthink\GuzzleJwt\Encoder\EncoderInterface|null $encoder
      * @param int $offset
      */
@@ -35,6 +33,7 @@ class TimeoutTokenFactory implements TokenFactoryInterface
     /**
      * @param string $token
      * @return \Webthink\GuzzleJwt\Token\TimeoutToken
+     * @throws \InvalidArgumentException
      */
     public function create($token)
     {

@@ -8,14 +8,11 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
 /**
- * Class TokenRequestException
- *
  * @author George Mponos <gmponos@gmail.com>
  */
 class BadTokenRequestException extends RequestException
 {
     /**
-     * TokenRequestException constructor.
      *
      * @param string $message
      * @param \Psr\Http\Message\RequestInterface $request

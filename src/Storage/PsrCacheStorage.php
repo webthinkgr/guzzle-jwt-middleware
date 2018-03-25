@@ -33,8 +33,6 @@ class PsrCacheStorage implements StorageInterface
     private $factory;
 
     /**
-     * PsrCacheStorage constructor.
-     *
      * @param \Psr\Cache\CacheItemPoolInterface $cache
      * @param \Webthink\GuzzleJwt\Token\TokenFactory\TokenFactoryInterface $factory
      * @param string $key

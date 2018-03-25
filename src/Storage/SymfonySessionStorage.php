@@ -28,8 +28,6 @@ class SymfonySessionStorage implements StorageInterface
     private $factory;
 
     /**
-     * SymfonySessionStorage constructor.
-     *
      * @param \Symfony\Component\HttpFoundation\Session\Session $session
      * @param \Webthink\GuzzleJwt\Token\TokenFactory\TokenFactoryInterface $factory
      * @param string $sessionKey

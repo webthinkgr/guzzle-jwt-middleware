@@ -6,9 +6,7 @@ use Webthink\GuzzleJwt\AuthenticatorInterface;
 use Webthink\GuzzleJwt\StorageInterface;
 
 /**
- * Class StoreAuthenticator
- *
- * @package Webthink\GuzzleJwt\Authenticator
+ * @author George Mponos <gmponos@gmail.com>
  */
 class StoreAuthenticator implements AuthenticatorInterface
 {
@@ -23,8 +21,6 @@ class StoreAuthenticator implements AuthenticatorInterface
     private $authenticator;
 
     /**
-     * StoreAuthenticator constructor.
-     *
      * @param \Webthink\GuzzleJwt\AuthenticatorInterface $authenticator
      * @param \Webthink\GuzzleJwt\StorageInterface $storage
      * @throws \InvalidArgumentException
@@ -33,7 +29,7 @@ class StoreAuthenticator implements AuthenticatorInterface
     {
         if ($authenticator instanceof StoreAuthenticator) {
             throw new \InvalidArgumentException(
-                sprintf('You can not pass a %s into another', self::class)
+                sprintf('You can not pass a %s into another.', self::class)
             );
         }
         $this->storage = $storage;
