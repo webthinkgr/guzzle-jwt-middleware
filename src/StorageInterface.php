@@ -3,8 +3,6 @@
 namespace Webthink\GuzzleJwt;
 
 /**
- * Class StorageInterface
- *
  * @author George Mponos <gmponos@gmail.com>
  */
 interface StorageInterface
