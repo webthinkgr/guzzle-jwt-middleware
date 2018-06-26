@@ -10,7 +10,7 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Change the minimum required version of guzzle from `^6.2` to `6.*`
 - Fixed the alias version in composer.
 
-## v0.3.0 - 2017-09-15
+## v0.3.0 - 2017-09-14
 
 ### Bug
 - Function that was calculating the timeout token if it was valid was wrong.
