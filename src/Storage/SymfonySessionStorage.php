@@ -2,7 +2,7 @@
 
 namespace Webthink\GuzzleJwt\Storage;
 
-use Symfony\Component\HttpFoundation\Session\Session;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Webthink\GuzzleJwt\StorageInterface;
 use Webthink\GuzzleJwt\Token\TokenFactory\TokenFactoryInterface;
 use Webthink\GuzzleJwt\TokenInterface;
@@ -13,7 +13,7 @@ use Webthink\GuzzleJwt\TokenInterface;
 class SymfonySessionStorage implements StorageInterface
 {
     /**
-     * @var Session
+     * @var SessionInterface
      */
     private $session;
 
@@ -28,11 +28,11 @@ class SymfonySessionStorage implements StorageInterface
     private $factory;
 
     /**
-     * @param \Symfony\Component\HttpFoundation\Session\Session $session
+     * @param \Symfony\Component\HttpFoundation\Session\SessionInterface $session
      * @param \Webthink\GuzzleJwt\Token\TokenFactory\TokenFactoryInterface $factory
      * @param string $sessionKey
      */
-    public function __construct(Session $session, TokenFactoryInterface $factory, $sessionKey)
+    public function __construct(SessionInterface $session, TokenFactoryInterface $factory, $sessionKey)
     {
         $this->session = $session;
         $this->key = $sessionKey;
