@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<ruleset name="GuzzleJwt">
+<ruleset name="guzzle-jwt">
     <description>The coding standard for the Guzzle JWT package</description>
 
     <config name="ignore_warnings_on_exit" value="1" />
