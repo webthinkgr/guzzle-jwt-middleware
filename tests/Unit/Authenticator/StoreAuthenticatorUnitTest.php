@@ -50,6 +50,6 @@ class StoreAuthenticatorUnitTest extends \PHPUnit_Framework_TestCase
         $storeAuthenticator1 = new StoreAuthenticator($testAuthenticator, new NullStorage());
 
         $this->setExpectedException(\InvalidArgumentException::class);
-        $storeAuthenticator2 = new StoreAuthenticator($storeAuthenticator1, new NullStorage());
+        new StoreAuthenticator($storeAuthenticator1, new NullStorage());
     }
 }

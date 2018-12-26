@@ -24,7 +24,7 @@ You can install the package using composer
 
 As a first step you need to implement your own Authenticator.
 
-```
+``` php
 class MyAuthenticator implements AuthenticatorInterface
 {
     public function authenticate($username, $password)
@@ -36,7 +36,7 @@ class MyAuthenticator implements AuthenticatorInterface
 
 Then you need to append into your handler stack the middleware provided by the package.
 
-```
+``` php
 // Your handler stack
 $stack = HandlerStack::create();
 
@@ -62,7 +62,7 @@ for more than one HTTP Request.
 In order to use the storage you will need either to implement an Authenticator of your own that will use the storage
 or use the `StoreAuthenticator`
 
-```
+``` php
 $myAuthenticator = new MyAuthenticator();
 $storeAuthenticator = new StoreAuthenticator($myAuthenticator, new MemoryStorage());
 ```

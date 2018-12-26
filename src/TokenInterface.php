@@ -3,8 +3,6 @@
 namespace Webthink\GuzzleJwt;
 
 /**
- * Class TokenInterface
- *
  * @author George Mponos <gmponos@gmail.com>
  */
 interface TokenInterface

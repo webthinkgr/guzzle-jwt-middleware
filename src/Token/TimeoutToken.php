@@ -5,6 +5,8 @@ namespace Webthink\GuzzleJwt\Token;
 use Webthink\GuzzleJwt\Encoder\EncoderInterface;
 
 /**
+ * Timeout token describes a token that includes in it's payload an expiration.
+ *
  * @author George Mponos <gmponos@xm.com>
  */
 class TimeoutToken extends AbstractToken
@@ -15,8 +17,6 @@ class TimeoutToken extends AbstractToken
     private $offset;
 
     /**
-     * TimeoutToken constructor.
-     *
      * @param string $token
      * @param \Webthink\GuzzleJwt\Encoder\EncoderInterface|null $encoder
      * @param int $offset An offset can be set that it will reduce the expiration time. This is useful in cases you run
@@ -35,16 +35,15 @@ class TimeoutToken extends AbstractToken
     public function isValid()
     {
         $payload = $this->getPayload();
-
         if (isset($payload['exp'])) {
             $now = new \DateTime('now');
 
             if (is_int($payload['exp'])) {
-                return ($now->getTimestamp() - $payload['exp'] - $this->offset) > 0;
+                return ($payload['exp'] - $this->offset - $now->getTimestamp()) > 0;
             }
 
             if (is_numeric($payload['exp'])) {
-                return ($now->format('U') - $payload['exp'] - $this->offset) > 0;
+                return ($payload['exp'] - $this->offset - $now->format('U')) > 0;
             }
         }
 

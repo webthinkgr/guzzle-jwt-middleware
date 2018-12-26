@@ -16,8 +16,6 @@ class ChainStorage implements StorageInterface
     private $storages;
 
     /**
-     * ChainStorage constructor.
-     *
      * @param StorageInterface[] $storages
      * @throws \InvalidArgumentException
      */
