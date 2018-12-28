@@ -2,12 +2,13 @@
 
 namespace Webthink\GuzzleJwt\Test\Unit;
 
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Cache\Adapter\ArrayAdapter;
 use Webthink\GuzzleJwt\Storage\PsrCacheStorage;
 use Webthink\GuzzleJwt\Token\DummyToken;
 use Webthink\GuzzleJwt\Token\TokenFactory\DummyTokenFactory;
 
-class PsrCacheStorageUnitTest extends \PHPUnit_Framework_TestCase
+final class PsrCacheStorageUnitTest extends TestCase
 {
     public function testStoredToken()
     {

@@ -2,9 +2,10 @@
 
 namespace Webthink\GuzzleJwt\Test\Unit\Encoder;
 
+use PHPUnit\Framework\TestCase;
 use Webthink\GuzzleJwt\Encoder\Base64Encoder;
 
-class Base64EncoderUnitTest extends \PHPUnit_Framework_TestCase
+final class Base64EncoderUnitTest extends TestCase
 {
     /**
      * @var Base64Encoder
@@ -13,6 +14,7 @@ class Base64EncoderUnitTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
+        parent::setUp();
         $this->encoder = new Base64Encoder();
     }
 
@@ -20,6 +22,6 @@ class Base64EncoderUnitTest extends \PHPUnit_Framework_TestCase
     {
         $encoded = $this->encoder->encode('test');
         $this->assertInternalType('string', $encoded);
-        $this->assertEquals('test', $this->encoder->decode($encoded));
+        $this->assertSame('test', $this->encoder->decode($encoded));
     }
 }

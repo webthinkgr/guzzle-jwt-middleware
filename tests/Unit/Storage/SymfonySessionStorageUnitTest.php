@@ -2,13 +2,14 @@
 
 namespace Webthink\GuzzleJwt\Test\Unit;
 
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\HttpFoundation\Session\Storage\MockArraySessionStorage;
 use Webthink\GuzzleJwt\Storage\SymfonySessionStorage;
 use Webthink\GuzzleJwt\Token\DummyToken;
 use Webthink\GuzzleJwt\Token\TokenFactory\DummyTokenFactory;
 
-class SymfonySessionStorageUnitTest extends \PHPUnit_Framework_TestCase
+final class SymfonySessionStorageUnitTest extends TestCase
 {
     public function testMemoryStorageStoresToken()
     {

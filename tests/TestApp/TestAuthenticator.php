@@ -5,7 +5,7 @@ namespace Webthink\GuzzleJwt\Test\TestApp;
 use Webthink\GuzzleJwt\AuthenticatorInterface;
 use Webthink\GuzzleJwt\Token\DummyToken;
 
-class TestAuthenticator implements AuthenticatorInterface
+final class TestAuthenticator implements AuthenticatorInterface
 {
     /**
      * @inheritdoc

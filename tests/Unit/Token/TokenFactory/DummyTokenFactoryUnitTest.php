@@ -2,10 +2,11 @@
 
 namespace Webthink\GuzzleJwt\Test\Unit\Token\TokenFactory;
 
+use PHPUnit\Framework\TestCase;
 use Webthink\GuzzleJwt\Token\DummyToken;
 use Webthink\GuzzleJwt\Token\TokenFactory\DummyTokenFactory;
 
-class DummyTokenFactoryUnitTest extends \PHPUnit_Framework_TestCase
+final class DummyTokenFactoryUnitTest extends TestCase
 {
     public function testCreateDummyToken()
     {
