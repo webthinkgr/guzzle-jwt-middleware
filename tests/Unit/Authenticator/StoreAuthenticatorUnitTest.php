@@ -2,7 +2,8 @@
 
 namespace Webthink\GuzzleJwt\Test\Unit;
 
-use PHPUnit_Framework_MockObject_MockObject as MockObject;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Webthink\GuzzleJwt\Authenticator\StoreAuthenticator;
 use Webthink\GuzzleJwt\AuthenticatorInterface;
 use Webthink\GuzzleJwt\Storage\MemoryStorage;
@@ -10,7 +11,7 @@ use Webthink\GuzzleJwt\Storage\NullStorage;
 use Webthink\GuzzleJwt\Token\DummyToken;
 use Webthink\GuzzleJwt\TokenInterface;
 
-class StoreAuthenticatorUnitTest extends \PHPUnit_Framework_TestCase
+final class StoreAuthenticatorUnitTest extends TestCase
 {
     public function testThatTokenIsStored()
     {
@@ -49,7 +50,7 @@ class StoreAuthenticatorUnitTest extends \PHPUnit_Framework_TestCase
         $testAuthenticator = $this->getMockBuilder(AuthenticatorInterface::class)->getMock();
         $storeAuthenticator1 = new StoreAuthenticator($testAuthenticator, new NullStorage());
 
-        $this->setExpectedException(\InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         new StoreAuthenticator($storeAuthenticator1, new NullStorage());
     }
 }

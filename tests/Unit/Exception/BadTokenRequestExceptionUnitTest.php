@@ -4,11 +4,12 @@ namespace Webthink\GuzzleJwt\Test\Unit;
 
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
+use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Webthink\GuzzleJwt\Exception\BadTokenRequestException;
 
-class BadTokenRequestExceptionUnitTest extends \PHPUnit_Framework_TestCase
+final class BadTokenRequestExceptionUnitTest extends TestCase
 {
     /**
      * @var BadTokenRequestException

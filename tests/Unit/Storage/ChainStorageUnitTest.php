@@ -2,12 +2,13 @@
 
 namespace Webthink\GuzzleJwt\Test\Unit;
 
+use PHPUnit\Framework\TestCase;
 use Webthink\GuzzleJwt\Storage\ChainStorage;
 use Webthink\GuzzleJwt\Storage\NullStorage;
 use Webthink\GuzzleJwt\StorageInterface;
 use Webthink\GuzzleJwt\Token\DummyToken;
 
-class ChainStorageUnitTest extends \PHPUnit_Framework_TestCase
+final class ChainStorageUnitTest extends TestCase
 {
     public function testThatChainStorageStoresInBothStorages()
     {
@@ -53,7 +54,7 @@ class ChainStorageUnitTest extends \PHPUnit_Framework_TestCase
         $storage1 = $this->getMockBuilder(ChainStorage::class)
             ->disableOriginalConstructor()
             ->getMock();
-        $this->setExpectedException(\InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         new ChainStorage([
             $storage1,
         ]);
@@ -70,7 +71,7 @@ class ChainStorageUnitTest extends \PHPUnit_Framework_TestCase
     public function testWithANonStorageClass()
     {
         $storage1 = $this->getMockBuilder(\stdClass::class)->getMock();
-        $this->setExpectedException(\InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         new ChainStorage([
             $storage1,
         ]);
@@ -78,7 +79,7 @@ class ChainStorageUnitTest extends \PHPUnit_Framework_TestCase
 
     public function testThatYouCanNotInitializeAChainStorageWithEmptyArray()
     {
-        $this->setExpectedException(\InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         new ChainStorage([]);
     }
 }

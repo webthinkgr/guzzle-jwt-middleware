@@ -5,14 +5,16 @@ namespace Webthink\GuzzleJwt\Test\Unit;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
+use PHPUnit\Framework\TestCase;
 use Webthink\GuzzleJwt\Exception\BadCredentialException;
 use Webthink\GuzzleJwt\Middleware;
 use Webthink\GuzzleJwt\Test\TestApp\TestAuthenticator;
 
-class MiddlewareUnitTest extends \PHPUnit_Framework_TestCase
+final class MiddlewareUnitTest extends TestCase
 {
     public function testMiddlewareWithoutPassingOptionsForJwt()
     {
+        $this->expectNotToPerformAssertions();
         $authenticator = new TestAuthenticator();
         $handler = new MockHandler([
             new Response(200, [], 'test'),
@@ -39,12 +41,13 @@ class MiddlewareUnitTest extends \PHPUnit_Framework_TestCase
             ],
         ]);
 
-        $this->setExpectedException(BadCredentialException::class);
+        $this->expectException(BadCredentialException::class);
         $promise->wait();
     }
 
     public function testMiddlewareWithCorrectOptions()
     {
+        $this->expectNotToPerformAssertions();
         $authenticator = new TestAuthenticator();
         $handler = new MockHandler([
             new Response(200, [], 'test'),
@@ -64,6 +67,7 @@ class MiddlewareUnitTest extends \PHPUnit_Framework_TestCase
 
     public function testMiddlewareWhenJwtOptionIsSetAsFalse()
     {
+        $this->expectNotToPerformAssertions();
         $authenticator = new TestAuthenticator();
         $handler = new MockHandler([
             new Response(200, [], 'test'),

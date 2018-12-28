@@ -2,10 +2,11 @@
 
 namespace Webthink\GuzzleJwt\Test\Unit;
 
+use PHPUnit\Framework\TestCase;
 use Webthink\GuzzleJwt\Storage\MemoryStorage;
 use Webthink\GuzzleJwt\Token\DummyToken;
 
-class MemoryStorageUnitTest extends \PHPUnit_Framework_TestCase
+final class MemoryStorageUnitTest extends TestCase
 {
     public function testMemoryStorageStoresToken()
     {

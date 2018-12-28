@@ -2,13 +2,14 @@
 
 namespace Webthink\GuzzleJwt\Test\Unit\Token;
 
+use PHPUnit\Framework\TestCase;
 use Webthink\GuzzleJwt\Token\Token;
 
-class TokenUnitTest extends \PHPUnit_Framework_TestCase
+class TokenUnitTest extends TestCase
 {
     public function testCreateInvalidTimeoutTokenThrowsInvalidArgumentException()
     {
-        $this->setExpectedException(\InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         new Token('token');
     }
 }
