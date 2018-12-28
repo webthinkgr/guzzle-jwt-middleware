@@ -1,6 +1,6 @@
 # A guzzle middleware for JWT authentication.
 
-[![codecov](https://codecov.io/gh/webthinkgr/guzzle-jwt/branch/master/graph/badge.svg)](https://codecov.io/gh/webthinkgr/guzzle-jwt)
+[![codecov](https://codecov.io/gh/webthinkgr/guzzle-jwt-middleware/branch/master/graph/badge.svg)](https://codecov.io/gh/webthinkgr/guzzle-jwt)
 [![Build Status](https://travis-ci.org/webthinkgr/guzzle-jwt-middleware.svg?branch=master)](https://travis-ci.org/webthinkgr/guzzle-jwt)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/a8aeeada-e24d-4474-b7a4-714fbd7d9432/mini.png)](https://insight.sensiolabs.com/projects/a8aeeada-e24d-4474-b7a4-714fbd7d9432)
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/webthinkgr/guzzle-jwt/blob/master/LICENSE)
