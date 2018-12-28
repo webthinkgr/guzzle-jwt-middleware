@@ -1,16 +1,11 @@
 # A guzzle middleware for JWT authentication.
 
 [![codecov](https://codecov.io/gh/webthinkgr/guzzle-jwt/branch/master/graph/badge.svg)](https://codecov.io/gh/webthinkgr/guzzle-jwt)
-[![Build Status](https://travis-ci.org/webthinkgr/guzzle-jwt.svg?branch=master)](https://travis-ci.org/webthinkgr/guzzle-jwt)
+[![Build Status](https://travis-ci.org/webthinkgr/guzzle-jwt-middleware.svg?branch=master)](https://travis-ci.org/webthinkgr/guzzle-jwt)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/a8aeeada-e24d-4474-b7a4-714fbd7d9432/mini.png)](https://insight.sensiolabs.com/projects/a8aeeada-e24d-4474-b7a4-714fbd7d9432)
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/webthinkgr/guzzle-jwt/blob/master/LICENSE)
 
 Goal of this package is to provide a set of useful classes in order to use a JWT authentication with Guzzle.
-
-## Description
-
-I will not proceed with creating classes that implement the `AuthenticatorInterface`. The AuthenticatorInterface
-can be implemented by the developer who uses the package.
 
 ## Install
 
@@ -53,6 +48,11 @@ $httpClient = new Client([
 
 $response = $httClient->get('/my_api_that_requires_jwt_token');
 ```
+
+**NOTE**
+
+I will not proceed with creating classes that implement the `AuthenticatorInterface`. The AuthenticatorInterface
+can be implemented by the developer who uses the package.
 
 ### Storages
 
