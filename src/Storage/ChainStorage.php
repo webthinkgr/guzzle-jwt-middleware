@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Webthink\GuzzleJwt\Storage;
 
 use Webthink\GuzzleJwt\StorageInterface;
@@ -8,7 +10,7 @@ use Webthink\GuzzleJwt\TokenInterface;
 /**
  * @author George Mponos <gmponos@gmail.com>
  */
-class ChainStorage implements StorageInterface
+final class ChainStorage implements StorageInterface
 {
     /**
      * @var StorageInterface[]

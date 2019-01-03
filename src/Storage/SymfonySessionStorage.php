@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Webthink\GuzzleJwt\Storage;
 
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
@@ -10,7 +12,7 @@ use Webthink\GuzzleJwt\TokenInterface;
 /**
  * @author George Mponos <gmponos@gmail.com>
  */
-class SymfonySessionStorage implements StorageInterface
+final class SymfonySessionStorage implements StorageInterface
 {
     /**
      * @var SessionInterface

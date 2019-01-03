@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Webthink\GuzzleJwt\Storage;
 
 use Psr\Cache\CacheItemPoolInterface;
@@ -10,7 +12,7 @@ use Webthink\GuzzleJwt\TokenInterface;
 /**
  * @author George Mponos <gmponos@gmail.com>
  */
-class PsrCacheStorage implements StorageInterface
+final class PsrCacheStorage implements StorageInterface
 {
     /**
      * @var CacheItemPoolInterface

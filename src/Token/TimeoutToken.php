@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Webthink\GuzzleJwt\Token;
 
 use Webthink\GuzzleJwt\Encoder\EncoderInterface;
