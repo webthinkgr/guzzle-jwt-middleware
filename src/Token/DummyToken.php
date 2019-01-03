@@ -10,7 +10,7 @@ use Webthink\GuzzleJwt\TokenInterface;
  *
  * @author George Mponos <gmponos@xm.com>
  */
-class DummyToken implements TokenInterface
+final class DummyToken implements TokenInterface
 {
     /**
      * @var array
@@ -33,8 +33,6 @@ class DummyToken implements TokenInterface
     private $token;
 
     /**
-     * DummyToken constructor.
-     *
      * @param string $token
      * @param array $payload
      * @param array $header

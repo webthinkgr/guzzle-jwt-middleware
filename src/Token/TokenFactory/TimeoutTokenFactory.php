@@ -8,7 +8,7 @@ use Webthink\GuzzleJwt\Token\TimeoutToken;
 /**
  * @author George Mponos <gmponos@xm.com>
  */
-class TimeoutTokenFactory implements TokenFactoryInterface
+final class TimeoutTokenFactory implements TokenFactoryInterface
 {
     /**
      * @var EncoderInterface

@@ -7,7 +7,7 @@ use Webthink\GuzzleJwt\Token\DummyToken;
 /**
  * @author George Mponos <gmponos@xm.com>
  */
-class DummyTokenFactory implements TokenFactoryInterface
+final class DummyTokenFactory implements TokenFactoryInterface
 {
     /**
      * @var array

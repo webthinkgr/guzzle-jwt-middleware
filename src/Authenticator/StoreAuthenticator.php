@@ -8,7 +8,7 @@ use Webthink\GuzzleJwt\StorageInterface;
 /**
  * @author George Mponos <gmponos@gmail.com>
  */
-class StoreAuthenticator implements AuthenticatorInterface
+final class StoreAuthenticator implements AuthenticatorInterface
 {
     /**
      * @var \Webthink\GuzzleJwt\StorageInterface

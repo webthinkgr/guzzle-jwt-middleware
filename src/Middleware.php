@@ -9,7 +9,7 @@ use Webthink\GuzzleJwt\Exception\BadCredentialException;
 /**
  * @author George Mponos <gmponos@gmail.com>
  */
-class Middleware
+final class Middleware
 {
     /**
      * @var AuthenticatorInterface

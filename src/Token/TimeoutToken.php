@@ -9,7 +9,7 @@ use Webthink\GuzzleJwt\Encoder\EncoderInterface;
  *
  * @author George Mponos <gmponos@xm.com>
  */
-class TimeoutToken extends AbstractToken
+final class TimeoutToken extends AbstractToken
 {
     /**
      * @var int
