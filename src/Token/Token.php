@@ -5,7 +5,7 @@ namespace Webthink\GuzzleJwt\Token;
 /**
  * @author George Mponos <gmponos@gmail.com>
  */
-class Token extends AbstractToken
+final class Token extends AbstractToken
 {
     /**
      * @inheritdoc

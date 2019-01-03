@@ -9,7 +9,7 @@ use Webthink\GuzzleJwt\Token\Token;
 /**
  * @author George Mponos <gmponos@xm.com>
  */
-class TokenFactory implements TokenFactoryInterface
+final class TokenFactory implements TokenFactoryInterface
 {
     /**
      * @var EncoderInterface

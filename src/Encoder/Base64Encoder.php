@@ -5,7 +5,7 @@ namespace Webthink\GuzzleJwt\Encoder;
 /**
  * @author George Mponos <gmponos@gmail.com>
  */
-class Base64Encoder implements EncoderInterface
+final class Base64Encoder implements EncoderInterface
 {
     /**
      * @param string $data
