@@ -53,9 +53,7 @@ final class ChainStorageUnitTest extends TestCase
 
     public function testInitializingAStorageWithAStorageTokenIsNotAccepted()
     {
-        $storage1 = $this->getMockBuilder(ChainStorage::class)
-            ->disableOriginalConstructor()
-            ->getMock();
+        $storage1 = new ChainStorage([new NullStorage()]);
         $this->expectException(\InvalidArgumentException::class);
         new ChainStorage([
             $storage1,
