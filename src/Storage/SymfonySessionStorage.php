@@ -41,18 +41,12 @@ final class SymfonySessionStorage implements StorageInterface
         $this->factory = $factory;
     }
 
-    /**
-     * @inheritdoc
-     */
-    public function storeToken(TokenInterface $token)
+    public function storeToken(TokenInterface $token): void
     {
         $this->session->set($this->key, $token->getTokenString());
     }
 
-    /**
-     * @inheritdoc
-     */
-    public function getToken()
+    public function getToken(): ?TokenInterface
     {
         $token = $this->session->get($this->key, null);
         if ($token === null) {

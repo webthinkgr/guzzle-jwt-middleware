@@ -6,9 +6,10 @@ namespace Webthink\GuzzleJwt\Token\TokenFactory;
 
 use Webthink\GuzzleJwt\Encoder\EncoderInterface;
 use Webthink\GuzzleJwt\Token\TimeoutToken;
+use Webthink\GuzzleJwt\TokenInterface;
 
 /**
- * @author George Mponos <gmponos@xm.com>
+ * @author George Mponos <gmponos@gmail.com>
  */
 final class TimeoutTokenFactory implements TokenFactoryInterface
 {
@@ -37,7 +38,7 @@ final class TimeoutTokenFactory implements TokenFactoryInterface
      * @return \Webthink\GuzzleJwt\Token\TimeoutToken
      * @throws \InvalidArgumentException
      */
-    public function create($token)
+    public function create(string $token): TokenInterface
     {
         return new TimeoutToken($token, $this->encoder, $this->offset);
     }

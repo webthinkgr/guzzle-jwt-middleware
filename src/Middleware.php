@@ -18,9 +18,6 @@ final class Middleware
      */
     private $authenticator;
 
-    /**
-     * @param \Webthink\GuzzleJwt\AuthenticatorInterface $authenticator
-     */
     public function __construct(AuthenticatorInterface $authenticator)
     {
         $this->authenticator = $authenticator;

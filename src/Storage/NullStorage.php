@@ -8,22 +8,16 @@ use Webthink\GuzzleJwt\StorageInterface;
 use Webthink\GuzzleJwt\TokenInterface;
 
 /**
- * @author George Mponos <gmponos@xm.com>
+ * @author George Mponos <gmponos@gmail.com>
  */
 final class NullStorage implements StorageInterface
 {
-    /**
-     * @inheritdoc
-     */
-    public function storeToken(TokenInterface $token)
+    public function storeToken(TokenInterface $token): void
     {
         return;
     }
 
-    /**
-     * @inheritdoc
-     */
-    public function getToken()
+    public function getToken(): ?TokenInterface
     {
         return null;
     }

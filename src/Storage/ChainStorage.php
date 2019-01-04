@@ -40,20 +40,14 @@ final class ChainStorage implements StorageInterface
         $this->storages = $storages;
     }
 
-    /**
-     * @inheritdoc
-     */
-    public function storeToken(TokenInterface $token)
+    public function storeToken(TokenInterface $token): void
     {
         foreach ($this->storages as $storage) {
             $storage->storeToken($token);
         }
     }
 
-    /**
-     * @inheritdoc
-     */
-    public function getToken()
+    public function getToken(): ?TokenInterface
     {
         foreach ($this->storages as $storage) {
             $token = $storage->getToken();

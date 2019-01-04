@@ -9,7 +9,7 @@ use Webthink\GuzzleJwt\Encoder\EncoderInterface;
 /**
  * Timeout token describes a token that includes in it's payload an expiration.
  *
- * @author George Mponos <gmponos@xm.com>
+ * @author George Mponos <gmponos@gmail.com>
  */
 final class TimeoutToken extends AbstractToken
 {
@@ -25,16 +25,13 @@ final class TimeoutToken extends AbstractToken
      *                    a long running script
      * @throws \InvalidArgumentException
      */
-    public function __construct($token, EncoderInterface $encoder = null, $offset = 0)
+    public function __construct(string $token, EncoderInterface $encoder = null, int $offset = 0)
     {
         parent::__construct($token, $encoder);
         $this->offset = $offset;
     }
 
-    /**
-     * @inheritdoc
-     */
-    public function isValid()
+    public function isValid(): bool
     {
         $payload = $this->getPayload();
         if (isset($payload['exp'])) {

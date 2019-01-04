@@ -9,20 +9,12 @@ namespace Webthink\GuzzleJwt\Encoder;
  */
 final class Base64Encoder implements EncoderInterface
 {
-    /**
-     * @param string $data
-     * @return string
-     */
-    public function encode($data)
+    public function encode(string $data): string
     {
         return base64_encode($data);
     }
 
-    /**
-     * @param string $data
-     * @return string
-     */
-    public function decode($data)
+    public function decode(string $data): string
     {
         return base64_decode($data);
     }

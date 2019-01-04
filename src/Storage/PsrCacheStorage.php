@@ -40,18 +40,19 @@ final class PsrCacheStorage implements StorageInterface
      * @param string $key
      * @param int $expTime
      */
-    public function __construct(CacheItemPoolInterface $cache, TokenFactoryInterface $factory, $key, $expTime = 0)
-    {
+    public function __construct(
+        CacheItemPoolInterface $cache,
+        TokenFactoryInterface $factory,
+        string $key,
+        int $expTime = 0
+    ) {
         $this->cache = $cache;
         $this->key = $key;
         $this->expTime = $expTime;
         $this->factory = $factory;
     }
 
-    /**
-     * @inheritdoc
-     */
-    public function storeToken(TokenInterface $token)
+    public function storeToken(TokenInterface $token): void
     {
         $item = $this->cache->getItem($this->key);
         $item->set($token->getTokenString());
@@ -59,10 +60,7 @@ final class PsrCacheStorage implements StorageInterface
         $this->cache->save($item);
     }
 
-    /**
-     * @inheritdoc
-     */
-    public function getToken()
+    public function getToken(): ?TokenInterface
     {
         $item = $this->cache->getItem($this->key);
         if ($item->isHit() === false) {

@@ -10,7 +10,7 @@ use Webthink\GuzzleJwt\TokenInterface;
  * This is a token that you will retrieve from it what you passed on it's construction.
  * Mainly the use of this token class is for testing purposes.
  *
- * @author George Mponos <gmponos@xm.com>
+ * @author George Mponos <gmponos@gmail.com>
  */
 final class DummyToken implements TokenInterface
 {
@@ -34,13 +34,7 @@ final class DummyToken implements TokenInterface
      */
     private $token;
 
-    /**
-     * @param string $token
-     * @param array $payload
-     * @param array $header
-     * @param string $signature
-     */
-    public function __construct($token, array $payload, array $header, $signature)
+    public function __construct(string $token, array $payload, array $header, string $signature)
     {
         $this->payload = $payload;
         $this->header = $header;
@@ -48,42 +42,27 @@ final class DummyToken implements TokenInterface
         $this->token = $token;
     }
 
-    /**
-     * @inheritdoc
-     */
-    public function getTokenString()
+    public function getTokenString(): string
     {
         return $this->token;
     }
 
-    /**
-     * @inheritdoc
-     */
-    public function isValid()
+    public function isValid(): bool
     {
         return true;
     }
 
-    /**
-     * @inheritdoc
-     */
-    public function getPayload()
+    public function getPayload(): array
     {
         return $this->payload;
     }
 
-    /**
-     * @inheritdoc
-     */
-    public function getHeader()
+    public function getHeader(): array
     {
         return $this->header;
     }
 
-    /**
-     * @inheritdoc
-     */
-    public function getSignature()
+    public function getSignature(): string
     {
         return $this->signature;
     }
