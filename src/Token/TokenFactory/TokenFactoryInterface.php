@@ -15,5 +15,5 @@ interface TokenFactoryInterface
      * @param string $token
      * @return TokenInterface
      */
-    public function create($token);
+    public function create(string $token): TokenInterface;
 }

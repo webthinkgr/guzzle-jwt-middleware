@@ -5,9 +5,10 @@ declare(strict_types=1);
 namespace Webthink\GuzzleJwt\Token\TokenFactory;
 
 use Webthink\GuzzleJwt\Token\DummyToken;
+use Webthink\GuzzleJwt\TokenInterface;
 
 /**
- * @author George Mponos <gmponos@xm.com>
+ * @author George Mponos <gmponos@gmail.com>
  */
 final class DummyTokenFactory implements TokenFactoryInterface
 {
@@ -31,7 +32,7 @@ final class DummyTokenFactory implements TokenFactoryInterface
      * @param array $header
      * @param string $signature
      */
-    public function __construct(array $payload, array $header, $signature)
+    public function __construct(array $payload, array $header, string $signature)
     {
         $this->payload = $payload;
         $this->header = $header;
@@ -42,7 +43,7 @@ final class DummyTokenFactory implements TokenFactoryInterface
      * @param string $token
      * @return \Webthink\GuzzleJwt\Token\DummyToken
      */
-    public function create($token)
+    public function create(string $token): TokenInterface
     {
         return new DummyToken($token, $this->payload, $this->header, $this->signature);
     }

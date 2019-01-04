@@ -9,7 +9,7 @@ use Webthink\GuzzleJwt\Encoder\EncoderInterface;
 use Webthink\GuzzleJwt\TokenInterface;
 
 /**
- * @author George Mponos <gmponos@xm.com>
+ * @author George Mponos <gmponos@gmail.com>
  */
 abstract class AbstractToken implements TokenInterface
 {
@@ -39,13 +39,11 @@ abstract class AbstractToken implements TokenInterface
     protected $encoder;
 
     /**
-     * AbstractToken constructor.
-     *
      * @param string $token
      * @param \Webthink\GuzzleJwt\Encoder\EncoderInterface|null $encoder
      * @throws \InvalidArgumentException
      */
-    public function __construct($token, EncoderInterface $encoder = null)
+    public function __construct(string $token, EncoderInterface $encoder = null)
     {
         $this->encoder = ($encoder === null ? new Base64Encoder() : $encoder);
         list($header, $payload, $signature) = $this->parse($token);
@@ -59,7 +57,7 @@ abstract class AbstractToken implements TokenInterface
     /**
      * @return array
      */
-    public function getPayload()
+    public function getPayload(): array
     {
         return $this->payload;
     }
@@ -67,7 +65,7 @@ abstract class AbstractToken implements TokenInterface
     /**
      * @return array
      */
-    public function getHeader()
+    public function getHeader(): array
     {
         return $this->header;
     }
@@ -75,7 +73,7 @@ abstract class AbstractToken implements TokenInterface
     /**
      * @return string
      */
-    public function getSignature()
+    public function getSignature(): string
     {
         return $this->signature;
     }
@@ -83,7 +81,7 @@ abstract class AbstractToken implements TokenInterface
     /**
      * @return string
      */
-    public function getTokenString()
+    public function getTokenString(): string
     {
         return $this->token;
     }
@@ -93,7 +91,7 @@ abstract class AbstractToken implements TokenInterface
      * @return array
      * @throws \InvalidArgumentException
      */
-    protected function parse($token)
+    protected function parse(string $token): array
     {
         $parts = explode('.', $token);
         if (count($parts) !== 3) {

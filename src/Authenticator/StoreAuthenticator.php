@@ -6,6 +6,7 @@ namespace Webthink\GuzzleJwt\Authenticator;
 
 use Webthink\GuzzleJwt\AuthenticatorInterface;
 use Webthink\GuzzleJwt\StorageInterface;
+use Webthink\GuzzleJwt\TokenInterface;
 
 /**
  * @author George Mponos <gmponos@gmail.com>
@@ -38,10 +39,7 @@ final class StoreAuthenticator implements AuthenticatorInterface
         $this->authenticator = $authenticator;
     }
 
-    /**
-     * @inheritdoc
-     */
-    public function authenticate($username, $password)
+    public function authenticate(string $username, string $password): TokenInterface
     {
         $token = $this->storage->getToken();
         if ($token !== null && $token->isValid() !== false) {

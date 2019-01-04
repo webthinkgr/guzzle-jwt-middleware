@@ -13,11 +13,11 @@ interface EncoderInterface
      * @param string $data
      * @return string
      */
-    public function encode($data);
+    public function encode(string $data): string;
 
     /**
      * @param string $data
      * @return string
      */
-    public function decode($data);
+    public function decode(string $data): string;
 }

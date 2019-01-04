@@ -14,27 +14,27 @@ interface TokenInterface
      *
      * @return string
      */
-    public function getTokenString();
+    public function getTokenString(): string;
 
     /**
      * @return array
      */
-    public function getPayload();
+    public function getPayload(): array;
 
     /**
      * @return array
      */
-    public function getHeader();
+    public function getHeader(): array;
 
     /**
      * @return string
      */
-    public function getSignature();
+    public function getSignature(): string;
 
     /**
      * Checks if the token is valid
      *
      * @return bool
      */
-    public function isValid();
+    public function isValid(): bool;
 }

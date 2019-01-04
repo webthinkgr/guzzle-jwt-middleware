@@ -6,8 +6,7 @@
     <arg value="p" />
 
     <rule ref="vendor/webthink/codesniffer/src/Webthink/ruleset.xml">
-        <exclude name="PEAR.Commenting.FunctionComment.MissingReturn" />
-        <exclude name="PEAR.Commenting.FunctionComment.MissingParamTag" />
+        <exclude name="PEAR.Commenting.FunctionComment" />
         <exclude name="Webthink.Formatting.UseInAlphabeticalOrder" />
     </rule>
     <rule ref="Generic.Metrics.CyclomaticComplexity">
