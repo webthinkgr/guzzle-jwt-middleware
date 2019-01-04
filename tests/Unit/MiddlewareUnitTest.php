@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Webthink\GuzzleJwt\Test\Unit;
 
 use GuzzleHttp\Handler\MockHandler;
