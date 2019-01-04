@@ -6,13 +6,11 @@ namespace Webthink\GuzzleJwt\Test\TestApp;
 
 use Webthink\GuzzleJwt\AuthenticatorInterface;
 use Webthink\GuzzleJwt\Token\DummyToken;
+use Webthink\GuzzleJwt\TokenInterface;
 
 final class TestAuthenticator implements AuthenticatorInterface
 {
-    /**
-     * @inheritdoc
-     */
-    public function authenticate($username, $password)
+    public function authenticate(string $username, string $password): TokenInterface
     {
         return new DummyToken(
             'my_token',
