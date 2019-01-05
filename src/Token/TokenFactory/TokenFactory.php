@@ -20,8 +20,6 @@ final class TokenFactory implements TokenFactoryInterface
     private $encoder;
 
     /**
-     * TokenFactory constructor.
-     *
      * @param \Webthink\GuzzleJwt\Encoder\EncoderInterface $encoder
      */
     public function __construct(EncoderInterface $encoder = null)

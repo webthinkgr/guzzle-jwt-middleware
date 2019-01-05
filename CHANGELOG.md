@@ -4,6 +4,17 @@ All Notable changes to `webthink/guzzle-jwt` will be documented in this file.
 
 Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) principles.
 
+## v1.0.0 - 2019-01-05
+
+### Changed
+- Drop support for PHP 5. Minimum PHP version is PHP 7.1
+    - Added strict types everywhere.
+    - Added typehints
+- Made all classes final.
+- BadTokenRequestException is removed.
+- `SymfonySessionStorage` uses `\Symfony\Component\HttpFoundation\Session\SessionInterface` instead of `\Symfony\Component\HttpFoundation\Session\Session`
+- `TokenFactory` will use default `Base64Encoder`
+
 ## v0.4.0 - 2018-06-25
 
 ### Changed
