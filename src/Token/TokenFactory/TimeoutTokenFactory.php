@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Webthink\GuzzleJwt\Token\TokenFactory;
 
+use InvalidArgumentException;
 use Webthink\GuzzleJwt\Encoder\EncoderInterface;
 use Webthink\GuzzleJwt\Token\TimeoutToken;
 use Webthink\GuzzleJwt\TokenInterface;
@@ -24,19 +25,24 @@ final class TimeoutTokenFactory implements TokenFactoryInterface
     private $offset;
 
     /**
-     * @param \Webthink\GuzzleJwt\Encoder\EncoderInterface|null $encoder
+     * @param EncoderInterface|null $encoder
      * @param int $offset
      */
-    public function __construct(EncoderInterface $encoder = null, $offset = 0)
+    public function __construct(EncoderInterface $encoder = null, int $offset = 0)
     {
         $this->encoder = $encoder;
         $this->offset = $offset;
     }
 
+    public function setOffset(int $offset): void
+    {
+        $this->offset = $offset;
+    }
+
     /**
      * @param string $token
-     * @return \Webthink\GuzzleJwt\Token\TimeoutToken
-     * @throws \InvalidArgumentException
+     * @return TimeoutToken
+     * @throws InvalidArgumentException
      */
     public function create(string $token): TokenInterface
     {
