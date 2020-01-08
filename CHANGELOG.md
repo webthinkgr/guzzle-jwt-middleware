@@ -4,7 +4,7 @@ All Notable changes to `webthink/guzzle-jwt` will be documented in this file.
 
 Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) principles.
 
-## v1.0.0 - 2020-01-08
+## v1.1.0 - 2020-01-08
 
 ### Added
 - Added a function setOffset to TimeoutFactory.
